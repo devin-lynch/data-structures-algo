@@ -1,5 +1,6 @@
 const nemo: string[] = ['nemo'];
 const everyone: string[] = ['dory', 'bruce', 'marlin', 'nemo', 'gill', 'bloat', 'nigel', 'squirt', 'darla', 'hank'];
+const large = new Array(100).fill('nemo')
 
 function findNemo(array: string[]) {
     let t0 = performance.now();
@@ -13,4 +14,5 @@ function findNemo(array: string[]) {
 }
 
 // findNemo(nemo)
-findNemo(everyone)
+// findNemo(everyone)
+findNemo(large)
