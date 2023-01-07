@@ -1,3 +1,11 @@
+// SIMPLIFYING BIG O
+// RULE 1: Worst Case!! (For scalability!)
+//  in the 'finding nemo' example, nemo was the 3rd index. Even if nemo was first, we would want to account for the 'worst case' aka if nemo was the 9th index. That would make it O(n) instead of O(1)
+// RULE 2: Remove Constants
+//  if it's O(n + 500000) we simplify to just O(n). Disregard the constants!
+// RULE 3: Different terms for inputs
+// RULE 4: Drop Non Dominants
+// # ## # ## # ## # ## # ## # ## # ## # ## #
 // // What is the Big O of the below function? (Hint, you may want to go line by line)
 // function funChallenge(input) {
 //     let a = 10; // O(1)
@@ -13,20 +21,74 @@
 // // BIG O(3 + 4n)
 // // Simplified to O(n)
 // # ## # ## # ## # ## # ## # ## # ## # ## #
-function anotherFunChallenge(input) {
-    var a = 5; // O(1)
-    var b = 10; // O(1)
-    var c = 50; // O(1)
-    for (var i = 0; i < input; i++) { // O(n) -- optional to include!
-        var x = i + 1; // O(n)
-        var y = i + 2; // O(n)
-        var z = i + 3; // O(n)
+// function anotherFunChallenge(input) {
+//     let a = 5; // O(1)
+//     let b = 10; // O(1)
+//     let c = 50; // O(1)
+//     for (let i = 0; i < input; i++) { // O(n)
+//         let x = i + 1; // O(n)
+//         let y = i + 2; // O(n)
+//         let z = i + 3; // O(n)
+//     }
+//     for (let j = 0; j < input; j++) { // O(n)
+//         let p = j * 2; // O(n)
+//         let q = j * 2; // O(n)
+//     }
+//     let whoAmI = "I don't know!" // O(1)
+// }
+// // 4 + n + n + n + n + n + n + n
+// // BIG O(4 + 7n)  -- could be O(4 + 5n) if we don't include the loops (optional -- still results in O(n) when simplified!)
+// # ## # ## # ## # ## # ## # ## # ## # ## #
+// Rule 1
+// function printFirstItemThenFirstHalfThenSayHi100Times(items: string[]) {
+//     console.log(items[0]); // O(1)
+//     let middleIndex = Math.floor(items.length / 2); // O(n/2)
+//     let index = 0
+//     while (index < middleIndex) {
+//         console.log(items[index]);
+//         index++;
+//     }
+//     for (let i = 0; i < 100; i++) { // Looping 100 times!
+//         console.log('hi');
+//     }
+// }
+// // O(1 + n/2 + 100)
+// // O(n/2 + 101)
+// // O(n/2 + 1)  -- as it scales higher and higher, the /2 becomes insignificant. Drop it!
+// // O(n + 1) -- +1 is insignificant. drop it! drop constants!
+// // O(n)
+// # ## # ## # ## # ## # ## # ## # ## # ## #
+// Rule 2
+// function compressBoxesTwice(boxes) {
+//     boxes.forEach(function(boxes) { // O(n)
+//         console.log(boxes);
+//     })
+//     boxes.forEach(function(boxes) { // O(n)
+//         console.log(boxes);
+//     })
+// }
+// // O(n) + O(n)
+// // O(2n)
+// // O(n) -- Drop the constants!
+// # ## # ## # ## # ## # ## # ## # ## # ## #
+// Rule 3
+// function compressBoxesTwiceTwo(boxes: string[], boxes2: string[]) {
+//     boxes.forEach(function(boxes) { // O(n)
+//         console.log(boxes);
+//     })
+//     boxes2.forEach(function(boxes) { // O(n)
+//         console.log(boxes);
+//     })
+// }
+// // O(a + b)
+// # ## # ## # ## # ## # ## # ## # ## # ## #
+// Log all pairs of array
+var boxes = ['a', 'b', 'c', 'd', 'e'];
+function pair(array) {
+    for (var i = 0; i < array.length; i++) {
+        for (var j = 0; j < array.length; j++) {
+            console.log(array[i], array[j]);
+        }
     }
-    for (var j = 0; j < input; j++) { // O(n) -- optional to include!
-        var p = j * 2; // O(n)
-        var q = j * 2; // O(n)
-    }
-    var whoAmI = "I don't know!"; // O(1)
 }
-// 4 + n + n + n + n + n + n + n
-// BIG O(4 + 7n)  -- could be O(4 + 5n) if we don't include the loops (optional -- still results in O(n) when simplified!)
+pair(boxes);
