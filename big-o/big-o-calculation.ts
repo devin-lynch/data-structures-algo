@@ -117,19 +117,48 @@
 
 // # ## # ## # ## # ## # ## # ## # ## # ## #
 
-// Log all pairs of array
+// // Log all pairs of array
 
-const boxes: string[] = ['a', 'b', 'c', 'd', 'e'];
+// const boxes: string[] = ['a', 'b', 'c', 'd', 'e'];
 
-function pair(array: string[]) {
-    for (let i = 0; i < array.length; i++) {
-        for (let j = 0; j < array.length; j++) { // nested loop! instead of two loops after each other (addition), loops that are nested use multiplication!
-            console.log(array[i], array[j]);
-        }
-    }
-}
+// function pair(array: string[]) {
+//     for (let i = 0; i < array.length; i++) {
+//         for (let j = 0; j < array.length; j++) { // nested loop! instead of two loops after each other (addition), loops that are nested use multiplication!
+//             console.log(array[i], array[j]);
+//         }
+//     }
+// }
 
-pair(boxes)
+// pair(boxes)
 
-// O(n * n)
-// O(n^2) -- Quadratic Time -- everytime the number of elements increase, the number of operations increases quadratically!
+// // O(n * n)
+// // O(n^2) -- Quadratic Time -- everytime the number of elements increase, the number of operations increases quadratically!
+
+
+// # ## # ## # ## # ## # ## # ## # ## # ## #
+
+ function printAllNumbersThenAllPairSums(numbers: number[]) {
+
+    console.log('these are the numbers:'); // O(n)
+    numbers.forEach(number => {
+        console.log(number);
+    })
+
+    console.log('and these are their sums:');
+    numbers.forEach(firstNumber => {  // O(n)
+        numbers.forEach(secondNumber => { // O(n)
+            console.log(firstNumber + secondNumber);
+        })
+    })
+ }
+
+ const nums = [1, 2, 3, 4, 5]
+ printAllNumbersThenAllPairSums(nums)
+
+ // O(n + n^2)
+ // Rule 4!
+ // O(n^2) -- as size increases the n^2 is more imporant than O(n)
+
+ // O(x^2+3x+100+x/2)
+ // Simplify! Drop non dominant terms
+ // O(x^2)  -- all about scale! if x = 5 then 100 is the biggest, but it doesn't scale.
