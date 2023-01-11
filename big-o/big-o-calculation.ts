@@ -137,28 +137,35 @@
 
 // # ## # ## # ## # ## # ## # ## # ## # ## #
 
- function printAllNumbersThenAllPairSums(numbers: number[]) {
+//  function printAllNumbersThenAllPairSums(numbers: number[]) {
 
-    console.log('these are the numbers:'); // O(n)
-    numbers.forEach(number => {
-        console.log(number);
-    })
+//     console.log('these are the numbers:'); // O(n)
+//     numbers.forEach(number => {
+//         console.log(number);
+//     })
 
-    console.log('and these are their sums:');
-    numbers.forEach(firstNumber => {  // O(n)
-        numbers.forEach(secondNumber => { // O(n)
-            console.log(firstNumber + secondNumber);
-        })
-    })
- }
+//     console.log('and these are their sums:');
+//     numbers.forEach(firstNumber => {  // O(n)
+//         numbers.forEach(secondNumber => { // O(n)
+//             console.log(firstNumber + secondNumber);
+//         })
+//     })
+//  }
 
- const nums = [1, 2, 3, 4, 5]
- printAllNumbersThenAllPairSums(nums)
+//  const nums = [1, 2, 3, 4, 5]
+//  printAllNumbersThenAllPairSums(nums)
 
- // O(n + n^2)
- // Rule 4!
- // O(n^2) -- as size increases the n^2 is more imporant than O(n)
+//  // O(n + n^2)
+//  // Rule 4!
+//  // O(n^2) -- as size increases the n^2 is more imporant than O(n)
 
- // O(x^2+3x+100+x/2)
- // Simplify! Drop non dominant terms
- // O(x^2)  -- all about scale! if x = 5 then 100 is the biggest, but it doesn't scale.
+//  // O(x^2+3x+100+x/2)
+//  // Simplify! Drop non dominant terms
+//  // O(x^2)  -- all about scale! if x = 5 then 100 is the biggest, but it doesn't scale.
+
+
+// # ## # ## # ## # ## # ## # ## # ## # ## #
+
+// O(n!) -- worst/most expensive one! factorial time or O('no')
+// it exists, but you won't encounter it
+// adding a nested loop for EVERY input we have

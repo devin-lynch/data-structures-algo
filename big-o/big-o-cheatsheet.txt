@@ -13,7 +13,7 @@ nested loops
 O(2^n) Exponential- recursive algorithms that solves a problem of size N
 O(n!) Factorial- you are adding a loop for every element
 
-Iterating through half a collection is still O(n)
+Iterating through half a collection is still O(n)!
 Two separate collections: O(a * b)
 
 # ## # ## # ## # ## # ## # ## # ## #
@@ -31,10 +31,9 @@ Outside Function call (function())
 
 Rule 1: Always worst Case
 Rule 2: Remove Constants
-Rule 3: Different inputs should have different variables. O(a+b). A and B arrays nested would be
-O(a*b)
-+ for steps in order
-* for nested steps
+Rule 3: Different inputs should have different variables. O(a+b). A and B arrays nested would be O(a*b)
+    + for steps in order
+    * for nested steps
 Rule 4: Drop Non-dominant terms
 
 # ## # ## # ## # ## # ## # ## # ## #
@@ -45,3 +44,26 @@ Variables
 Data Structures
 Function Call
 Allocations
+
+# ## # ## # ## # ## # ## # ## # ## #
+
+What is good code?
+
+1. Readable
+2. Scalable
+    a. Speed/Time
+    b. Memory/Space
+
+
+Which code is best?
+
+-Readable
+-Memory (Space Complexity (Big O))
+-Speed (Time Complexity (Big O))
+
+Most programming code solutions have a tradeoff between Speed and Memory.
+    Want things to go faster? You might have to sacrifce more memory.
+    Want less memory? Sacrifice your speed.
+
+# ## # ## # ## # ## # ## # ## # ## #
+
