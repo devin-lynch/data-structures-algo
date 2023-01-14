@@ -32,6 +32,7 @@
 // }
 
 // // O(a * b) time complexity -- due to different inputs (diff sized arrays -- if they were the same length then it would be O(n^2) )
+// // O(1) Space Complexity
 
 // containsCommonItem(array1, array2)
 
@@ -56,7 +57,8 @@ const array4: string[] = ['z', 'y', 'x'];
 
 function containsCommonItem2(arr1: string[], arr2: string[]) {
     // loop through first array and create object where properties === items in the array
-    let map = {};
+    // can we assume always 2 params?
+    let map = {}; // creating a new object -- adds to space complexity
     for (let i = 0; i < arr1.length; i++) {
         if (!map[arr1[i]]) {
             const item = arr1[i];
@@ -73,6 +75,15 @@ function containsCommonItem2(arr1: string[], arr2: string[]) {
     return false
 }
 
-// O(a + b) -- no longer using a nested loop! much more efficient
+// O(a + b) Time Complexity
+// O(a) Space Complexity
 
 containsCommonItem2(array1, array2)
+
+
+// using javascript methods as a diff solution to the problem -- more readable and concise
+function containsCommonItem3(arr1, arr2) {
+    return arr1.some(item => arr2.includes(item))
+}
+
+containsCommonItem3(array1, array2)
