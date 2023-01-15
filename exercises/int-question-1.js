@@ -38,30 +38,55 @@ var array4 = ['z', 'y', 'x'];
 //     x: true
 // }
 // array2[index] === obj.properties
-function containsCommonItem2(arr1, arr2) {
-    // loop through first array and create object where properties === items in the array
-    // can we assume always 2 params?
-    var map = {}; // creating a new object -- adds to space complexity
-    for (var i = 0; i < arr1.length; i++) {
-        if (!map[arr1[i]]) {
-            var item = arr1[i];
-            map[item] = true;
-        }
-    }
-    // console.log(map);
-    // loop through second array and check if item in second array exists on created object
-    for (var j = 0; j < arr2.length; j++) {
-        if (map[arr2[j]]) {
-            return true;
-        }
-    }
-    return false;
-}
-// O(a + b) Time Complexity
-// O(a) Space Complexity
-containsCommonItem2(array1, array2);
-// using javascript methods as a diff solution to the problem -- more readable and concise
-function containsCommonItem3(arr1, arr2) {
-    return arr1.some(function (item) { return arr2.includes(item); });
-}
-containsCommonItem3(array1, array2);
+// function containsCommonItem2(arr1: string[], arr2: string[]) {
+//     // loop through first array and create object where properties === items in the array
+//     // can we assume always 2 params?
+//     let map = {}; // creating a new object -- adds to space complexity
+//     for (let i = 0; i < arr1.length; i++) {
+//         if (!map[arr1[i]]) {
+//             const item = arr1[i];
+//             map[item] = true;
+//         }
+//     }
+//     // console.log(map);
+//     // loop through second array and check if item in second array exists on created object
+//     for (let j = 0; j < arr2.length; j++) {
+//         if (map[arr2[j]]) {
+//             return true
+//         }
+//     }
+//     return false
+// }
+// // O(a + b) Time Complexity
+// // O(a) Space Complexity
+// containsCommonItem2(array1, array2)
+// // using javascript methods as a diff solution to the problem -- more readable and concise
+// function containsCommonItem3(arr1, arr2) {
+//     return arr1.some(item => arr2.includes(item))
+// }
+// containsCommonItem3(array1, array2)
+// ## # ## # ## # ## # ## # ## # ## #
+// // Naive
+// function hasPairWithSum(arr: number[], sum: number) {
+//     let len = arr.length;
+//     for(let i = 0; i < len - 1; i++) {
+//         for (let j = i + 1; j < len; j++) {
+//             if (arr[i] + arr[j] === sum)
+//             return true;
+//         }
+//     }
+//     return false;
+// }
+// // Better
+// function hasPairWithSum2(arr: number[], sum: number) {
+//     const mySet = new Set(); // set is a js method
+//     const len = arr.length;
+//     for (let i = 0; i < len; i++) {
+//         if (mySet.has(arr[i])) {
+//             return true;
+//         }
+//         mySet.add(sum - arr[i]);
+//     }
+//     return false;
+// }
+// hasPairWithSum2([6, 4, 3, 2, 1, 7], 9)
