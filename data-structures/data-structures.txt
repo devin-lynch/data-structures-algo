@@ -1,0 +1,26 @@
+Each language has its own data types and data structures to organize the data types.
+
+Operations on data structures:
+    Insertion:
+        add a new data item in a given collection of items
+    Deletion:
+        delete data from a list
+    Traversal:
+        access each data item exactly once so that it can be processed
+    Searching:
+        find out the location of the data item if it exists in a given collection
+    Sorting:
+        having data that is sorted
+    Access:
+        how do we access this data that we have on our computer
+
+
+Arrays (sometimes called 'lists')
+    organize items sequentially (one after another in memory)
+    often the simplist and widely used data structure
+    least amount of rules and smallest footprint
+
+    lookup O(1)
+    push   O(1)
+    insert O(n)
+    delete O(n)
