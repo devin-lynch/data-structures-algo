@@ -58,8 +58,8 @@ function reverse(str) {
     console.log('answer', reversed);
     return reversed;
 }
-reverse('testing');
-reverse('Hi my name is Andrei');
+// reverse('testing')
+// reverse('Hi my name is Andrei')
 function reverse2(str) {
     // check input -- TypeScript should take care of this
     if (!str || str.length < 2 || typeof str !== 'string') {
@@ -73,9 +73,38 @@ function reverse2(str) {
     console.log(backwards);
     return backwards.join('');
 }
-reverse2('Hi my name is Andrei');
+// reverse2('Hi my name is Andrei')
 function reverse3(str) {
     console.log(str.split('').reverse().join(''));
     return str.split('').reverse().join(''); // built in js method 'reverse' and 'join'
 }
-reverse3('Does it work?');
+// reverse3('Does it work?')
+// # ## # ## # ## # ## # ## # ## # ## #
+function mergeSortedArrays(array1, array2) {
+    var mergedArray = [];
+    var array1Item = array1[0];
+    var array2Item = array2[0];
+    var i = 1;
+    var j = 1;
+    if (array1.length === 0) {
+        return array2;
+    }
+    if (array2.length === 0) {
+        return array1;
+    }
+    while (array1Item || array2Item) {
+        // console.log(array1Item, array2Item);
+        if (!array2Item || array1Item < array2Item) { // can make this its own function 'shouldPushArray1Item'
+            mergedArray.push(array1Item);
+            array1Item = array1[i];
+            i++;
+        }
+        else { // can make this its own function 'shouldPushArray2Item'
+            mergedArray.push(array2Item);
+            array2Item = array2[j];
+            j++;
+        }
+    }
+    return mergedArray;
+}
+mergeSortedArrays([0, 3, 4, 31], [4, 6, 30]);
